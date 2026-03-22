@@ -545,7 +545,7 @@ async function runDiagnostics(root: string): Promise<DiagResult[]> {
   });
 
   await check('Network reachable (GitHub)', async () => {
-    await execAsync('curl -sf --max-time 5 https://api.github.com', {});
+    await execAsync('curl -sf --max-time 5 https://api.github.com', { timeout: 8000 });
     return 'github.com OK';
   });
 
